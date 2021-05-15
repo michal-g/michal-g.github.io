@@ -15,22 +15,22 @@
             {% for post in site.posts %}
 
               {% if post.draft != true %}
-		<div class="plot-item">
-		  <img class="blog-plot-thumb" style='width: 65%'
-		    src="{{ post.thumb.src | absolute_url }}"
-		    alt="{{ post.thumb.alt }}"
-                  />
-                <div style='width: 30%; float: right;'
-                  <span class="work-text">
+                <div style='width: 31%; float: left;'
+                  <span class='work-text'>
                     <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}"
 		       class="blog-post-title">
 		       {{ post.title }}
 		       <br>
                     </a>
+		    {{ post.subtitle }}
 		  </span>
-		  {{ post.subtitle }}
-	          </div>
 	        </div>
+		<span class="plot-item">
+		  <img class="blog-plot-thumb" style='width: 57%; margin-left: 45px; margin-bottom: 55px;'
+		    src="{{ post.thumb.src | absolute_url }}"
+		    alt="{{ post.thumb.alt }}"
+                  />
+	        </span>
                 <br />
 
               {% endif %}
