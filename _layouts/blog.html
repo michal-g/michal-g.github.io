@@ -16,11 +16,11 @@
 
               {% if post.draft != true %}
 		<div class="plot-item">
-		  <img class="blog-plot-thumb" style='width: 48%'
+		  <img class="blog-plot-thumb" style='width: 65%'
 		    src="{{ post.thumb.src | absolute_url }}"
 		    alt="{{ post.thumb.alt }}"
                   />
-                <div style='width: 48%; float: right;'
+                <div style='width: 30%; float: right;'
                   <span class="work-text">
                     <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}"
 		       class="blog-post-title">
