@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="blog">
+          <h1 class="page-heading">{{ page.title }}</h1>
+          {{ content }}
+
+          <p class="blog-post-list">
+            {% for post in site.posts %}
+
+              {% if post.draft != true %}
+		<div class="plot-item">
+		  <img class="blog-plot-thumb" style='width: 48%'
+		    src="{{ post.thumb.src | absolute_url }}"
+		    alt="{{ post.thumb.alt }}"
+                  />
+                <div style='width: 48%; float: right;'
+                  <span class="work-text">
+                    <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}"
+		       class="blog-post-title">
+		       {{ post.title }}
+		       <br>
+                    </a>
+		  </span>
+		  {{ post.subtitle }}
+	          </div>
+	        </div>
+                <br />
+
+              {% endif %}
+
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include foot.html %}
+  </body>
+</html>
